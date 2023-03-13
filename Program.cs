@@ -3,16 +3,20 @@
 namespace midterm_2{
           class Program{
                     static void Main(string[] args){
+                              //initial variable
                               bool isweekend = false;
                               bool ismorning = false;
                               int breakfast = 5;
                               int weekend = 2;
                               int coffee = 3;
-
-                              int day = int.Parse(Console.ReadLine());
-                              int time = int.Parse(Console.ReadLine());
                               string order = "";
                               int massage;
+
+                              //input variable
+                              int day = int.Parse(Console.ReadLine());
+                              int time = int.Parse(Console.ReadLine());
+
+                              //checking date and time
                               if(day >= 6){
                                         isweekend = true;
                               }
@@ -20,8 +24,17 @@ namespace midterm_2{
                                         ismorning = true;
                               }
 
+                              //loop until "End"
                               while(order != "End"){
+                                        //input
                                         order = Console.ReadLine();
+
+                                        // checking and set massage accordingly
+                                        // massage = 0 is end, set output as empty
+                                        // massage = 1 is pass the condition, set output as empty
+                                        // massage = 2 is "Please enter a valid menu"
+                                        // massage = 3 is "Sorry your order is out of stock"
+                                        // massage = 4 is "Sorry your order is not available"
                                         switch(order){
                                                   case"Breakfast Set":
                                                             if(breakfast > 0){
@@ -63,6 +76,7 @@ namespace midterm_2{
                                                   break;
                                         }
 
+                                        //output
                                         switch(massage){
                                                   case 2:
                                                             Console.WriteLine("Please enter a valid menu");
